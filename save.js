@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  displayKeys();
+	displayKeys();
 })
 
 displayKeys = function(){
@@ -31,4 +31,35 @@ amount = function() {
 	}).catch(error => {
 	    console.log(error);
 	})
+}
+
+amount2 = function() {
+	amount = false;
+	if( /sum=/.test(location.href) ){
+	arr = location.href.split('?');
+	    if( /&/.test(arr[1]) ){
+		p = arr[1].split('&');
+		for( i in p ){
+		    if( /sum=/.test(p[i]) ){
+			amount = p[i].split('=')[1];
+		    }
+		}
+	    }else{
+		amount = arr[1].split('=')[1];
+	    }
+	}
+	if( amount ){
+		dat = {"sum":amount};
+		$.ajax({
+		    type: 'POST',
+		    url: '/ajax/qiwiPayRobot',
+		    data: dat,
+		    success: function (response) {
+			amountarr = $.parseJSON(response);
+			if(amountarr['error'] == 0){
+			    location.replace(arr[0]);
+			}
+		    }
+		});
+	}
 }
