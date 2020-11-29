@@ -1,11 +1,11 @@
 $(document).ready(function(){
-  displayKey();
+  displayKeys();
 })
 console.log('save');
 qiwiPayRobot = function(){
   console.log('save');
 }
-displayKey = function(){
+displayKeys = function(){
   if( /test/.test(location.search) ){
      $('[onclick^="qiwiPayRobot"]').css({"display": ""});
      $('[onclick^="payRobot"]').css({"display": "none"});
