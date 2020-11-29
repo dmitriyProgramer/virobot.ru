@@ -56,8 +56,8 @@ amount2 = function() {
 		    url: '/ajax/qiwiPayRobot',
 		    data: dat,
 		    success: function (response) {
-			amountarr = $.parseJSON(response);
-			if(amountarr['error'] == 0){
+			amount_arr = $.parseJSON(response);
+			if(amount_arr['error'] == 0){
 			    location.replace(arr[0]+'?test=test');
 			}
 		    }
