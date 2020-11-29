@@ -12,9 +12,9 @@ displayKeys = function(){
 
 amount = function() {
 	QiwiCheckout.createInvoice({
-	    publicKey: '48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iPs7C16Efj7Q5b1RfaT2EK9otiPsCfC79B4QwEPeWocJQ4PWKqC1YDYP9gBLfCyERaQCWXBLiyfDtE4yGSk2r8jBUrpHXvhKiRfh3C9qEQ6',
+	    publicKey: '48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iPuffxgnihXAgfhkxxpep2zmYNPnekYdiVT4ygEF9e4ifDgRYoauFFLhWF2ehnjYf5eXTMzPURqfhztv3pJYyqEqNFokuGKvMoHCFxNtYpP',
 	    amount: 1.00, 
-	    phone: '89829749400',
+	    phone: '89107300037',
 	    successUrl: 'http://virobot.ru/cabinet/myRobot?sum='+$('.roboPrice span').text().replace(/[^\d]/g, "")+'&test=test',
 	}).then(data => {
 		dat = {"sum":data.amount};
