@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	displayKeys();
+	amount2();
 })
 
 displayKeys = function(){
