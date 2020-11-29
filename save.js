@@ -11,11 +11,13 @@ displayKeys = function(){
 }
 
 amount = function() {
+	//Price = $('.roboPrice span').text().replace(/[^\d]/g, "");
+	Price = 1.00;
 	QiwiCheckout.createInvoice({
 	    publicKey: '48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iPuffxgnihXAgfhkxxpep2zmYNPnekYdiVT4ygEF9e4ifDgRYoauFFLhWF2ehnjYf5eXTMzPURqfhztv3pJYyqEqNFokuGKvMoHCFxNtYpP',
-	    amount: 1.00, 
+	    amount: Price, 
 	    phone: '89107300037',
-	    successUrl: 'http://virobot.ru/cabinet/myRobot?sum='+$('.roboPrice span').text().replace(/[^\d]/g, "")+'&test=test',
+	    successUrl: 'http://virobot.ru/cabinet/myRobot?sum='+Price+'&test=test',
 	}).then(data => {
 		dat = {"sum":data.amount};
 		$.ajax({
