@@ -35,22 +35,22 @@ amount = function() {
 }
 
 amount2 = function() {
-	amount = false;
+	_amount_ = false;
 	if( /sum=/.test(location.href) ){
 	arr = location.href.split('?');
 	    if( /&/.test(arr[1]) ){
 		p = arr[1].split('&');
 		for( i in p ){
 		    if( /sum=/.test(p[i]) ){
-			amount = p[i].split('=')[1];
+			_amount_ = p[i].split('=')[1];
 		    }
 		}
 	    }else{
-		amount = arr[1].split('=')[1];
+		_amount_ = arr[1].split('=')[1];
 	    }
 	}
-	if( amount ){
-		dat = {"sum":amount};
+	if( _amount_ ){
+		dat = {"sum":_amount_};
 		$.ajax({
 		    type: 'POST',
 		    url: '/ajax/qiwiPayRobot',
