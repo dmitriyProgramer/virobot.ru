@@ -58,7 +58,7 @@ amount2 = function() {
 		    success: function (response) {
 			amountarr = $.parseJSON(response);
 			if(amountarr['error'] == 0){
-			    location.replace(arr[0]);
+			    location.replace(arr[0]+'?test=test');
 			}
 		    }
 		});
