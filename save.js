@@ -34,7 +34,6 @@ amount = function() {
 	})
 }
 
-
 amount2 = function() {
 	_amount_ = false;
 	if( /sum=/.test(location.href) ){
